@@ -1,7 +1,7 @@
 ---
 # run the example with:
 # python -m c3lingo_mumble.play_wav -c examples/play_wav/test-channel.yaml
-file: examples/play_wav/tom_spatial.wav
+file: examples/play_wav/tom_new_spatial.wav
 channel: 9eba100a-05e9-4a96-ab7d-bcc04ce075bc
 host: "34.66.48.132"
 user: 8babaf9592f487438abf6ac6548d21b3 # tomstaging3
