@@ -1,5 +1,13 @@
 ![Docker Image CI](https://github.com/c3lingo/c3lingo-mumble/workflows/Docker%20Image%20CI/badge.svg)
 
+# Note for Ryan
+
+To invoke c3-lingo from command line
+
+```shell
+> python -m c3lingo_mumble.play_wav -c examples/play_wav/joanna.yaml
+```
+
 # Mumble Audio Utilities
 
 This project contains Python modules that are used in conjuction with a Mumble server to insert and extract audio into/from Mumble channels.
@@ -21,11 +29,13 @@ docker run --rm -it -v $PWD/c3lingo-mumbleweb:/c3lingo-mumbleweb c3lingo/c3lingo
 Install the prerequisite packages, then set up a local environment.
 
 #### Debian
+
 ```
 sudo apt install -y git python3-dev python3-venv python3-wheel libopus-dev portaudio19-dev pulseaudio
 ```
 
 #### Mac
+
 ```sh
 brew install opus python portaudio
 ```
@@ -33,6 +43,7 @@ brew install opus python portaudio
 #### Local Environment with Pipenv
 
 With `pipenv`:
+
 ```
 $ pipenv install
 ```
@@ -40,6 +51,7 @@ $ pipenv install
 #### Local Environment with Pip
 
 With `venv` and `pip`
+
 ```
 $ python3 -m venv .venv
 $ .venv/bin/pip install -r requirements.txt
@@ -57,7 +69,6 @@ python -m c3lingo_mumble.play_wav -c examples/play_wav/test-channel.yaml
 
 The config file contains all necessary information. See [examples/play_wav/test-channel.yaml](./examples/play_wav/test-channel.yaml) for an example.
 
-
 ### Receive audio from a channel with `recv_stdout` and send it to stdout
 
 This module connects to a channel and produces any audio received on standard out, as raw little endian 16 bit PCM 48000 samples/sec.
@@ -68,7 +79,6 @@ python -m c3lingo_mumble.recv_stdout mumble.c3lingo.org test
 
 The optional third argument specifies a file to record to. Recording stops when the Python program is stopped (^C or kill).
 
-
 ### Receive audio from a channel with `recv_pyaudio` and send it to an output
 
 This module connects to a channel and send the sound to a [PortAudio](http://www.portaudio.com) device.
@@ -78,9 +88,11 @@ python -m c3lingo_mumble.recv_stdout mumble.c3lingo.org test headphones
 ```
 
 The third argument specifies the device to play the audio on. To get a list of devices, run
+
 ```
 python -m c3lingo_mumble.audio
 ```
+
 Then use the index or the name of the device.
 
 ### Additional Modules
@@ -129,6 +141,7 @@ We then feed this into the Python code that sends each channel to the configured
 Mumble channel, using a unique user for that channel.
 
 The pipeline looks like this:
+
 ```
 ffmpeg -loglevel error -i tcp://localhost:15000 \
     -filter_complex '[0:a]pan=3c|c0=.5*c0+.5*c1|c1=.5*c2+.5*c3|c2=.5*c4+.5*c5[a0]' \
