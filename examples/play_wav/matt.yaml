@@ -1,0 +1,12 @@
+---
+# run the example with:
+# python -m c3lingo_mumble.play_wav -c examples/play_wav/matt.yaml
+file: examples/play_wav/matt.wav
+channel: 9eba100a-05e9-4a96-ab7d-bcc04ce075bc
+host: "34.66.48.132"
+user: 040d62a9bc37a3dc6402c92e9f9d5d2b
+password: df8752711feab20ce9bbdc969958db07
+# certfile: certs/test-cert.pem
+# keyfile: certs/test-key.pem
+reconnect: true
+loop: true

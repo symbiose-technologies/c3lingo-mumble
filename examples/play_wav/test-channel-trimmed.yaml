@@ -1,0 +1,10 @@
+---
+# run the example with:
+# python -m c3lingo_mumble.play_wav -c examples/play_wav/test-channel.yaml
+file: examples/play_wav/c3lingo-test-channel-trimmed.wav
+channel: 9eba100a-05e9-4a96-ab7d-bcc04ce075bc
+host: "34.66.48.132"
+user: b0ec13bb2f258557c5cf2505a2467081
+password: b3e0f074df3c3a0b8c2d2c0964301c60
+reconnect: true
+loop: true
